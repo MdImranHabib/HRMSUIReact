@@ -30,24 +30,36 @@ class LogIn extends Component {
     render() {
         const { username, password} = this.state
         return (
-            <div className='container'>
-                <form onSubmit={this.handleSubmit}>
-                    <div>
-                        <label>User Name: </label>
-                        <input className='form-control' type='text' value={username} onChange={this.handleUserNameChange} />
+            <form>
+
+                <h3>Log in</h3>
+
+                <div className="form-group">
+                    <label>User Name</label>
+                    <input type="username" className="form-control" placeholder="Enter username" />
+                </div>
+
+                <div className="form-group">
+                    <label>Password</label>
+                    <input type="password" className="form-control" placeholder="Enter password" />
+                </div>
+
+                <div className="form-group">
+                    <div className="custom-control custom-checkbox">
+                        <input type="checkbox" className="custom-control-input" id="customCheck1" />
+                        <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
                     </div>
-                    <div>
-                        <label>Password: </label>
-                        <input className='form-control' type='password' value={password} onChange={this.handlePasswordChange} />
-                    </div>                   
-                    <div>
-                        <button type='submit' className='btn btn-success'>Submit</button>
-                    </div>
-                </form>
-            </div>
-        )
+                </div>
+
+                <button type="submit" className="btn btn-dark btn-lg btn-block">Sign in</button>
+                <p className="forgot-password text-right">
+                    Forgot <a href="#">password?</a>
+                </p>
+            </form>
+        );
     }
 }
 
 export default LogIn
+
 

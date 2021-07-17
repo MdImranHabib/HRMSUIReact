@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-// localhost port will be my api port
-const baseUrl = "http://localhost:60671/api/"
+const baseUrl = "http://localhost:49918/api/"
 
 export default {
 

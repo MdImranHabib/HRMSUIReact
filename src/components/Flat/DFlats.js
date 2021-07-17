@@ -17,7 +17,8 @@ import * as actions from "../../actions/Flat/dFlat";
 import DFlatForm from "./DFlatForm";
 import EditIcon from "@material-ui/icons/Edit";
 import DeleteIcon from "@material-ui/icons/Delete";
-import { useToasts } from "react-toast-notifications"
+import { useToasts } from "react-toast-notifications";
+import Box from '@material-ui/core/Box';
 
 const styles = (theme) => ({
   paper: {
@@ -41,12 +42,18 @@ const DFlats = ({ classes, ...props }) => {
   }
   return (
     <Paper className={classes.paper} elevation={3}>
-      <Grid container>
+      <Grid container spacing={1}>
         <Grid item xs={6}>
+        <Box boxShadow={3} textAlign="center" bgcolor="primary.main" color="primary.contrastText" mb={2} p={2} fontWeight="fontWeightBold">
+            Flat Form
+          </Box>        
           <DFlatForm {...{ currentId, setCurrentId }} />
         </Grid>
 
         <Grid item xs={6}>
+          <Box boxShadow={3} textAlign="center" bgcolor="primary.main" color="primary.contrastText" mb={2} p={2} fontWeight="fontWeightBold">
+            Flat List
+          </Box>
           <TableContainer>
             <Table>
               <TableHead>

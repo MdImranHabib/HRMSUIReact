@@ -1,13 +1,23 @@
+import React, { Component } from 'react';
 import './App.css';
-import LogIn from './components/login//LogIn';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import { store } from './actions/store';
+import { Provider } from 'react-redux';
+import DFlats from './components/Flat/DFlats';
+import { Container } from '@material-ui/core';
+import { ToastProvider } from "react-toast-notifications"
 
-function App() {
-  return (
-    <div className="App">
-     <LogIn />
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <ToastProvider autoDismiss={true}>
+          <Container maxWidth="lg">
+            <DFlats />
+          </Container>
+        </ToastProvider>
+      </Provider>
+    );
+  }
 }
 
 export default App;
